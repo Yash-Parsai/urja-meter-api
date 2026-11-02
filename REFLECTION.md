@@ -26,8 +26,6 @@ Working from a real captured request, and not from guesses, is what got me throu
 
 I assumed the export worked like the search endpoint. I called it with only the cookie, got a 401, and at first did not understand why. Then I assumed it was paged, and it is not: `page=2` returns the same 403 rows as `page=1`. A client that loops until a page is empty would never stop. The code now asks once, and a test keeps it that way.
 
-A smaller one: I posted a screenshot with my live session cookie visible. It expires after an hour, but I should have hidden it.
-
 ## What I would criticise
 
 The tests only prove that the code matches what I understood about the portal. The fake portal is built from my own reading of the real one, so a misunderstanding would be in both, and the tests would still pass. The only real check is `scripts/smoke.py` against the live portal, and that is a script, not an automated test.
