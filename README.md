@@ -181,15 +181,6 @@ Routes are normal functions. FastAPI runs them in threads and the portal client 
 - A cache for readings. They are always fresh, and every readings request calls the portal.
 - A database. The cached data lives in memory and is rebuilt when the service starts.
 
-## What I would do next
-
-1. Cache readings for a few seconds per meter and merge identical requests that arrive together, so one busy client cannot hammer the portal.
-2. Find the exact time window of the signature and write it into PROTOCOL.md.
-3. Find out what the `build` field means. I saw no difference between `legacy` and `v2` in the data.
-4. Ask someone who knows the system about the timezone instead of assuming it.
-5. Add metrics (request counts, portal latency, number of logins), authentication, and a Dockerfile.
-
-Nearby search is a plain scan with the haversine distance. On a laptop it takes about half a millisecond for these 403 meters and about 55 milliseconds for a catalog 100 times bigger. For millions of meters I would move the catalog into a database with a spatial index, such as PostGIS, and sync it in small steps instead of downloading everything again.
 
 ## Tests
 
