@@ -1,0 +1,11 @@
+# Secrets and local settings
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw responses saved by scripts/probe.py (they can contain a session cookie and the signing secret)
+probe_out/

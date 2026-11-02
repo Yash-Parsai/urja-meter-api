@@ -1,0 +1,6 @@
+# What the service needs to run. Versions are the ones the tests were run with, as minimums.
+fastapi>=0.162,<1
+uvicorn>=0.54,<1
+httpx>=0.28,<1
+pydantic>=2.13,<3
+python-dotenv>=1.0,<2

@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=9.0,<10
+# Only used by FastAPI's test client; without it pytest prints a deprecation warning.
+httpx2>=2.16,<3
